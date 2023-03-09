@@ -1,3 +1,8 @@
 trzeba dodać axiosa itd
 tutaj dam polecenia jakie trzeba dać na serrwerze u miki :
 - npm install mysql axios dotenv
+
+
+Wystartowenie kodu w js :
+- node nazwa_pliku.js
+- node app.js
