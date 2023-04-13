@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Przykład użycia Ajaxa z PHP</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js%22%3E</script>
+</head>
+<body>
+
+    <h1>Lista użytkowników</h1>
+
+    <table id="user-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nazwa</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+    <script>
+        $(document).ready(function() {
+            $.ajax({
+                url: 'laczenie.php',
+                type: 'GET',
+                dataType: 'json',
+                success: function(data) {
+                    if (data.length > 0) {
+                        $.each(data, function(index, value) {
+                            $('#user-table tbody').append('<tr><td>' + value.id + '</td><td>' + value.name + '</td></tr>');
+                        });
+                    } else {
+                        $('#user-table tbody').append('<tr><td colspan="2">Brak wyników.</td></tr>');
+                    }
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    console.log(textStatus, errorThrown);
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
