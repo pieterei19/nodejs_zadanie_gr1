@@ -2,7 +2,7 @@ const axios = require('axios');
 const mysql = require('mysql');
 
 const connection = mysql.createConnection({
-    host: 'localhost',
+    host: 'imiki.pl/phpmyadmin',
     user: 'zsti1',
     password: 'EciePecie666!',
     database: 'zsti1'
