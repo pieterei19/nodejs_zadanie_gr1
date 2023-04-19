@@ -15,7 +15,7 @@ axios.get('http://imiki.pl/cf/')
         data.forEach(function (item) {
             connection.query(sql, [item.temp1, item.temp2, item.temp3, item.Temp4, item.humidity], function (error, results, fields) {
                 if (error) throw error;
-                console.log('udalo sie');
+                console.log('Data saved');
             });
         });
     })
