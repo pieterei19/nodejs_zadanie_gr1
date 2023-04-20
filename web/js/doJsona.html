@@ -9,7 +9,22 @@
         <script>
             $.getJSON("http://imiki.pl/cf/", function (data) {
                 console.log(data);
+                document.getElementById("text").value = JSON.stringify(data,undefined,4);
+                function download_txt() {
+                var textToSave = document.getElementById("text").value;
+                var hiddenElement = document.createElement('a');
+
+                hiddenElement.href = 'data:attachment/text,' + encodeURI(textToSave);
+                hiddenElement.target = '_blank';
+                hiddenElement.download = 'cf.json';
+                hiddenElement.click();
+}
+            download_txt()
             });
         </script>
     </head>
+    <bodt>
+        <button type="button" id="test">Pobierz</button>
+        <textarea id="text"></textarea>
+    </bodt>
 </html>
